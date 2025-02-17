@@ -32,7 +32,7 @@ def init():
     elif page == "Quote Calculator":
         st.title("Get a Quote")
         base_price = 500
-        material_factor = st.selectbox("Material Type", {"Glass": 1.2, "Acrylic": 1.0, "Stone": 1.5, "Metal": 1.3})
+        material_factor = st.selectbox("Material Type", ["Glass", "Acrylic", "Stone", "Metal"])
         height = st.number_input("Height (inches)", min_value=60, max_value=100, value=80)
         width = st.number_input("Width (inches)", min_value=20, max_value=60, value=36)
         features_count = st.number_input("Number of Features", min_value=0, max_value=10, value=2)
@@ -62,7 +62,10 @@ def init():
 
 
 if __name__ == "__main__":
-    init()")
+    init()
+
+
+streamlit==1.30.0")
     }
   ]
 }
