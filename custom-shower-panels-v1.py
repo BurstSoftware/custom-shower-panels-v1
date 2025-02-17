@@ -40,7 +40,7 @@ def init():
         if st.button("Calculate Quote"):
             area = height * width
             feature_cost = features_count * 50
-            total_cost = base_price * material_factor + (area * 0.5) + feature_cost
+            total_cost = base_price * (1.0 if material_factor == "Acrylic" else 1.2 if material_factor == "Glass" else 1.5 if material_factor == "Stone" else 1.3) + (area * 0.5) + feature_cost
             st.success(f"Estimated Cost: ${total_cost:.2f}")
 
     # Contact Us page
@@ -62,10 +62,7 @@ def init():
 
 
 if __name__ == "__main__":
-    init()
-
-
-streamlit==1.30.0")
+    init()")
     }
   ]
 }
